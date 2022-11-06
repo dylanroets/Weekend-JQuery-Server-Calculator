@@ -30,7 +30,20 @@ function sendEquation() {
     }).catch (function(error){
         alert('Error Sending Equation: ', error)
     })
+        $.ajax({
+            method: 'GET',
+            url: '/receive-answer' 
+        }).then(function(response){
+            console.log('receiving GET: ', response);
+            
+        })
 }
+
+
+
+
+
+
 function grabSign() {
     let thisSign = $(this).text();
     operator = thisSign;

@@ -18,6 +18,7 @@ app.post('/sending-equation', (req, res) => {
     console.log('Previous Equations', prevEquation);
     console.log('sign received', equationObj.operator);
     res.sendStatus(200);
+    // going to use a switch statement to solve for problems
     switch(equationObj.operator) {
         case '+':
             equationObj.answer = Number(+equationObj.num1 + +equationObj.num2);
@@ -32,27 +33,24 @@ app.post('/sending-equation', (req, res) => {
             equationObj.answer = Number(+equationObj.num1 / +equationObj.num2);
             break;
     }
-    console.log('switch result: ', equationObj.answer);
-
-
+    equationAnswer.push(equationObj)
+    console.log('equation result: ', equationObj);//got rid of the .answer and sending whole object
+    // result from the problem is here
+})// Just had an AHA moment where I realized i could send over the whole equationObj,
+// instead of just the answer and then parse out the data to append on the client side!
+let equationAnswer = []
+// sending back answer to the problem
+app.get('/receive-answer', (req, res) => {
+    console.log('in answer app.get', equationAnswer);
+    res.send(equationAnswer);
 
 })
+
 
 //Array for all previous equations
 let prevEquation = []
 // testing equations history
 
-// switch(equationObj.operator) {
-//     case "+":
-//         return equationObj.num1 + equationObj.num2;
-//     case "-":
-//         return equationObj.num1 - equationObj.num2;
-//     case "*":
-//         return equationObj.num1 * equationObj.num2;
-//     case "/":
-//         return equationObj.num1 / equationObj.num2;
-// }
-// console.log('switch result: ', equationObj);
 
 
 
