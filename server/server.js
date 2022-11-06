@@ -21,16 +21,16 @@ app.post('/sending-equation', (req, res) => {
     // going to use a switch statement to solve for problems
     switch(equationObj.operator) {
         case '+':
-            equationObj.answer = Number(+equationObj.num1 + +equationObj.num2);
+            equationObj.answer = +equationObj.num1 + +equationObj.num2;
             break;
         case '-':
-            equationObj.answer = Number(+equationObj.num1 - +equationObj.num2);
+            equationObj.answer = +equationObj.num1 - +equationObj.num2;
             break;
         case '*':
-            equationObj.answer = Number(+equationObj.num1 * +equationObj.num2);
+            equationObj.answer = +equationObj.num1 * +equationObj.num2;
             break;
         case '/':
-            equationObj.answer = Number(+equationObj.num1 / +equationObj.num2);
+            equationObj.answer = +equationObj.num1 / +equationObj.num2;
             break;
     }
     equationAnswer.push(equationObj)

@@ -3,6 +3,7 @@ $(document).ready(handleReady);
 let operator = 0
 let number1 = 0
 let number2 = 0
+let equation = ''
 
 function handleReady() {
     console.log('JS and JQuery working');
@@ -45,13 +46,26 @@ function sendEquation() {
 
 function renderEquations(equation) {
     console.log('in renderEquations', equation);
+    $('#answer-log').empty();
+    for (component of equation){
     $('#answer-log').append(`
         <li> 
-        ${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}
+        ${component.num1} ${component.operator} ${component.num2} = ${component.answer}
         </li>
     `)
+    }
 }
-
+function renderAnswer(value) {
+    console.log('in renderAnswer');
+    $('#answer-h1').empty();
+    for (value of equation){
+    $('#answer-h1').append(`
+        <h2> 
+            ${value.answer}
+        </h2>
+    `)
+    }
+}
 
 function grabSign() {
     let thisSign = $(this).text();
