@@ -13,10 +13,10 @@ app.use(express.static('server/public'));
 // GET Equation Route
 app.post('/sending-equation', (req, res) => {
     let equationObj = req.body;
-    prevEquation.push(equationObj);
-    console.log('Equation posted: ', equationObj);
-    console.log('Previous Equations', prevEquation);
-    console.log('sign received', equationObj.operator);
+    // prevEquation.push(equationObj);
+    // console.log('Equation posted: ', equationObj);
+    // console.log('Previous Equations', prevEquation);
+    // console.log('sign received', equationObj.operator);
     res.sendStatus(200);
     // going to use a switch statement to solve for problems
     switch(equationObj.operator) {
@@ -48,14 +48,8 @@ app.get('/receive-answer', (req, res) => {
 
 
 //Array for all previous equations
-let prevEquation = []
+// let prevEquation = []
 // testing equations history
-
-
-
-
-
-
 
 
 

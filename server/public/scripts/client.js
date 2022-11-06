@@ -35,13 +35,22 @@ function sendEquation() {
             url: '/receive-answer' 
         }).then(function(response){
             console.log('receiving GET: ', response);
-            
+            renderEquations(response);
+        }).catch (function(error){
+            alert('Error Receiving Equations: ', error)
         })
 }
 
 
 
-
+function renderEquations(equation) {
+    console.log('in renderEquations', equation);
+    $('#answer-log').append(`
+        <li> 
+        ${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}
+        </li>
+    `)
+}
 
 
 function grabSign() {
