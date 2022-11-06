@@ -36,7 +36,7 @@ app.post('/sending-equation', (req, res) => {
     equationAnswer.push(equationObj)
     console.log('equation result: ', equationObj);//got rid of the .answer and sending whole object
     // result from the problem is here
-})// Just had an AHA moment where I realized i could send over the whole equationObj,
+})// Just had an 'AHA' moment where I realized i could send over the whole equationObj,
 // instead of just the answer and then parse out the data to append on the client side!
 let equationAnswer = []
 // sending back answer to the problem
