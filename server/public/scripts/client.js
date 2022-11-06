@@ -49,23 +49,28 @@ function renderEquations(equation) {
     $('#answer-log').empty();
     for (component of equation){
     $('#answer-log').append(`
-        <li> 
-        ${component.num1} ${component.operator} ${component.num2} = ${component.answer}
-        </li>
+            <li> 
+            ${component.num1} ${component.operator} ${component.num2} = ${component.answer}
+            </li>
     `)
     }
+        $('#answer-h2').empty()
+        $('#answer-h2').append(`
+            <h2>${component.answer}</h2>
+        `)
 }
-function renderAnswer(value) {
-    console.log('in renderAnswer');
-    $('#answer-h1').empty();
-    for (value of equation){
-    $('#answer-h1').append(`
-        <h2> 
-            ${value.answer}
-        </h2>
-    `)
-    }
-}
+
+// function renderAnswer(value) {
+//     console.log('in renderAnswer');
+//     $('#answer-h1').empty();
+//     for (value of equation){
+//     $('#answer-h1').append(`
+//         <h2> 
+//             ${value.answer}
+//         </h2>
+//     `)
+//     }
+// }
 
 function grabSign() {
     let thisSign = $(this).text();
