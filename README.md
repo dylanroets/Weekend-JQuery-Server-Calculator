@@ -1,9 +1,11 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Dylan's Server Side Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+I solved the problem of creating a server side calculator while having all the logic on the server.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+I used ajax to send all inputs and button presses over to the server, there the server did it's calculations with a switch statement and then I balled up the data in an object to send back.
+
+That ball of logic was sent back to the client.js and from there it was all parsed out and appended to the DOM. I also did some minimal CSS to beautify the webpage!

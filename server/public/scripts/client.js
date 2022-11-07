@@ -13,7 +13,6 @@ function handleReady() {
     $('.math-btns').on('click', grabSign);
     // Clears the input fields
     $('#clear-btn').on('click', clearFields);
-
 }
 
 function sendEquation() {
